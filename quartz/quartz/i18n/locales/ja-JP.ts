@@ -29,14 +29,17 @@ export default {
       lightMode: "ライトモード",
       darkMode: "ダークモード",
     },
+    readerMode: {
+      title: "リーダーモード",
+    },
     explorer: {
-      title: "エクスプローラー",
+      title: "Explorer",
     },
     footer: {
-      createdWith: "作成",
+      createdWith: "Created with",
     },
     graph: {
-      title: "グラフビュー",
+      title: "Graph View",
     },
     recentNotes: {
       title: "最近の記事",
