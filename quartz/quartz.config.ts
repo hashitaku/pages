@@ -16,7 +16,7 @@ const config: QuartzConfig = {
     locale: "ja-JP",
     baseUrl: "pages.hashitaku.dev",
     ignorePatterns: ["private", "templates", ".obsidian"],
-    defaultDateType: "modified",
+    defaultDateType: "created",
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
