@@ -1,6 +1,10 @@
 name: Deploy
+
 on:
   push:
+
+env:
+  THEME_NAME: adrenaline
 
 jobs:
   deploy:
@@ -20,6 +24,9 @@ jobs:
       - name: install dep
         working-directory: quartz
         run: npm install
+
+      - name: fetch quartz theme
+        run: curl -sS https://raw.githubusercontent.com/saberzero1/quartz-themes/master/action.sh | bash -s -- $THEME_NAME
 
       - name: build
         working-directory: quartz
