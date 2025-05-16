@@ -14,9 +14,20 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
+      - name: setup node
+        uses: actions/setup-node@v4
+
+      - name: install dep
+        working-directory: quartz
+        run: npm install
+
+      - name: build
+        working-directory: quartz
+        run: npx quartz build
+
       - name: deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy public --project-name=pages
+          command: pages deploy quartz/public --project-name=pages
