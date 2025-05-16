@@ -21,6 +21,8 @@ ObsidianとQuartzの関係はわかってない
 
 https://quartz.jzhao.xyz/
 
+テーマにhttps://github.com/saberzero1/quartz-themesを使用
+
 ## Git
 
 Quartzのコードと記事自体を管理
@@ -55,21 +57,17 @@ git subtree pull --prefix quartz/ --squash quartz v4
 
 コードホスティング先
 
-`Cloudflare Workers and Pages`を使用して後述するCloudflare Pagesにデプロイしている
+GitHub Actionsを使用してCloudflare Pagesにデプロイしている
 
-https://github.com/apps/cloudflare-workers-and-pages
+https://github.com/hashitaku/pages/blob/main/.github/workflows/deploy.yaml
+
+GitHub AppのCloudflare Workers and Pagesを使用してデプロイすることも可能だがQuartzに`saberzero1/quartz-themes`を適用したいためGithub Actionsでビルドしている
 
 ## Cloudflare Pages
 
 言わずと知れたホスティングサービス
 
 もしかしたらCloudflare Workersに乗り換えるかも
-
-デプロイの設定は以下の通り
-
-- ビルドコマンド: `npx quartz build`
-- ビルド出力: `public`
-- ルートディレクトリ: `quartz`
 
 ## Cloudflare Cache
 
