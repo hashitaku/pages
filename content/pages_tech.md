@@ -22,7 +22,7 @@ ObsidianとQuartzの関係はわかってない
 
 https://quartz.jzhao.xyz/
 
-テーマにhttps://github.com/saberzero1/quartz-themesを使用
+テーマに[saberzero1/quartz-themes](https://github.com/saberzero1/quartz-themes)を使用
 
 ## Git
 
