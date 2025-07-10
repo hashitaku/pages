@@ -1,5 +1,6 @@
 ---
 title: このサイトを支える技術
+date: 2025-05-16
 ---
 
 https://github.com/hashitaku/pages
