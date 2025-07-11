@@ -1,9 +1,14 @@
-.ONESHELL: serve
-.PHONY: serve
-serve:
+.ONESHELL: build
+.PHONY: build
+build:
 	@cd ./quartz/
 	@npm install
-	@npx quartz build --serve --watch
+	@npx quartz build --output ../public
+
+.ONESHELL: serve
+.PHONY: serve
+serve: build
+	@npm run dev
 
 .PHONY: pull
 pull:
