@@ -5,10 +5,9 @@ build:
 	@npm install
 	@npx quartz build --output ../public
 
-.ONESHELL: serve
 .PHONY: serve
-serve: build
-	@npm run dev
+serve:
+	@cd ./quartz/ && npx quartz build --serve --watch
 
 .PHONY: pull
 pull:
