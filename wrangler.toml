@@ -1,0 +1,10 @@
+name = "pages"
+compatibility_date = "2025-07-10"
+workers_dev = false
+
+[assets]
+directory = "./public/"
+
+[route]
+pattern = "hashitaku.dev"
+custom_domain = true

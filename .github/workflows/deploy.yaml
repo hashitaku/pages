@@ -20,22 +20,18 @@ jobs:
 
       - name: setup node
         uses: actions/setup-node@v4
-
-      - name: install dep
-        working-directory: quartz
-        run: npm install
+        with:
+          node-version: 24
 
       - name: fetch quartz theme
         working-directory: quartz
         run: curl -sS https://raw.githubusercontent.com/saberzero1/quartz-themes/master/action.sh | bash -s -- $THEME_NAME
 
       - name: build
-        working-directory: quartz
-        run: npx quartz build
+        run: make build
 
       - name: deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy quartz/public --project-name=pages
