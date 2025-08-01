@@ -7,7 +7,7 @@ build:
 
 .PHONY: serve
 serve:
-	@cd ./quartz/ && npx quartz build --serve --watch
+	@cd ./quartz/ && npm install && npx quartz build --serve --watch
 
 .PHONY: pull
 pull:
