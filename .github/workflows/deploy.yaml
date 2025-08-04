@@ -3,8 +3,8 @@ name: Deploy
 on:
   push:
 
-env:
-  THEME_NAME: adrenaline
+# env:
+#   THEME_NAME: adrenaline
 
 jobs:
   deploy:
@@ -23,9 +23,9 @@ jobs:
         with:
           node-version: 24
 
-      - name: fetch quartz theme
-        working-directory: quartz
-        run: curl -sS https://raw.githubusercontent.com/saberzero1/quartz-themes/master/action.sh | bash -s -- $THEME_NAME
+      # - name: fetch quartz theme
+      #   working-directory: quartz
+      #   run: curl -sS https://raw.githubusercontent.com/saberzero1/quartz-themes/master/action.sh | bash -s -- $THEME_NAME
 
       - name: build
         run: make build
