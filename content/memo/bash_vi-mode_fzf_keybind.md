@@ -2,7 +2,6 @@
 title: Bashをviモードで使う際のfzfキーバインド
 description:
 date: 2025-07-31
-draft: true
 ---
 
 ## Bash(readline)のviモード
@@ -87,10 +86,30 @@ Sleep 3s
 
 `fzf --bash`を読み込んで追加されるキーバインドの一つに`Alt-c`で`__fzf_cd__`を呼び出すものがあります。
 
-```readline
+```bash
 bind -m emacs-standard '"\ec": " \C-b\C-k \C-u`__fzf_cd__`\e\C-e\er\C-m\C-y\C-h\e \C-y\ey\C-x\C-x\C-d"'
 bind -m vi-command '"\ec": "\C-z\ec\C-z"'
 bind -m vi-insert '"\ec": "\C-z\ec\C-z"'
 ```
 
-`Alt-c`は
+bashにどのようなキーバインドが追加されているかを調べる方法として`bind -XS`があります。
+
+`Alt-c`は`ESC-c`と同じキーコードを送信するものであるため、それと同様のキーコードを送信する`Ctrl-[c`に反応していたようです。
+
+`od`で実際に`Alt-c`と`Ctrl-[c`が同じであることが確かめることもできます。
+
+```bash
+od -Ax -tx1a
+000000  1b  63  1b  63
+       esc   c esc   c
+```
+
+別の解決方法としてreadlineの設定ファイルに`set keyseq-timeout`でタイムアウトの時間を短く設定することで解決することもできます。
+
+デフォルトで500ms待つためもう少し短くしても良いかもしれません。
+
+## 参考
+
+[端末アプリで Ctrl-\[ が Esc になる理由](https://tyru.hatenablog.com/entry/2018/10/04/151740)
+
+[vi キーバインドで、なぜ J が下で K が上なのか？ ](https://blog.shinonome.io/vi-hjkl-with-ascii/)
