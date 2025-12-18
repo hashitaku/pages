@@ -1,7 +1,12 @@
 ---
 title: Bashをviモードで使う際のfzfキーバインド
-description:
 date: 2025-07-31
+description: ""
+tags:
+  - Linux
+  - Bash
+  - fzf
+  - Vim/Neovim
 ---
 
 ## Bash(readline)のviモード
