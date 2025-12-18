@@ -220,14 +220,26 @@ export const defaultImage: SocialImageOptions["imageStructure"] = ({
         }}
       >
         {iconBase64 && (
-          <img
-            src={iconBase64}
-            width={56}
-            height={56}
+          <div 
             style={{
-              borderRadius: "50%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: 56,
+                height: 56,
+                borderRadius: "50%",
+                overflow: "hidden",
             }}
-          />
+          >
+            <img
+              src={iconBase64}
+              style={{
+                width: "90%",
+                height: "90%",
+                objectFit: "contain",
+              }}
+            />
+          </div>
         )}
         <div
           style={{
