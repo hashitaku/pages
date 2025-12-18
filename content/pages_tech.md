@@ -1,6 +1,11 @@
 ---
 title: このサイトを支える技術
 date: 2025-07-11
+description:
+tags:
+  - Quartz
+  - Cloudflare
+  - Git
 ---
 
 https://github.com/hashitaku/pages
